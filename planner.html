@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planner | Jide Adeniji</title>
+  <meta name="description" content="Interactive academic task planner for tracking assignments and to-dos.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html" class="active">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-header">
+      <div class="scanline" aria-hidden="true"></div>
+      <div class="page-header-inner">
+        <p class="eyebrow">// academic planner</p>
+        <h1 class="page-heading">Task log</h1>
+        <p class="page-lede">Add assignments, mark them done, delete what's no longer needed. Saved in this browser automatically.</p>
+      </div>
+    </section>
+
+    <section class="planner-section">
+      <div class="planner-card">
+
+        <!--
+          STATS BAR: three small counters that main.js keeps updated every
+          time the task list changes. Reading "3 active, 2 done" at a
+          glance is more useful during a busy week than scrolling a full
+          list to count manually.
+        -->
+        <div class="planner-stats" id="plannerStats">
+          <div class="stat">
+            <span class="stat-number" id="statTotal">0</span>
+            <span class="stat-label">total</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="statActive">0</span>
+            <span class="stat-label">active</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="statDone">0</span>
+            <span class="stat-label">done</span>
+          </div>
+        </div>
+
+        <!--
+          ADD TASK FORM: a real <form> element, satisfying the brief's form
+          requirement on this page too. main.js listens for the "submit"
+          event rather than a button click directly, which also lets the
+          visitor just press Enter in the text field, a small usability
+          detail a click-only handler would miss.
+        -->
+        <form id="taskForm" class="task-form">
+          <input
+            type="text"
+            id="taskInput"
+            class="task-input"
+            placeholder="Add a task, e.g. Finish COS 106 planner page"
+            maxlength="120"
+            required
+          >
+          <input
+            type="date"
+            id="taskDate"
+            class="task-date-input"
+            aria-label="Optional due date"
+          >
+          <button type="submit" class="btn btn-primary task-submit">Add task</button>
+        </form>
+        <!--
+          VALIDATION MESSAGE: hidden by default, main.js reveals this if the
+          form is submitted with an empty or whitespace-only task, so the
+          visitor gets clear feedback instead of the row silently failing
+          to appear.
+        -->
+        <p class="form-error" id="formError" role="alert"></p>
+
+        <!--
+          FILTER TABS: three buttons that control which tasks are visible.
+          data-filter tells main.js which array of tasks to show when that
+          button is clicked. The "active" class marks the currently
+          selected filter, moved by JS on every click.
+        -->
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!--
+          TASK LIST: starts empty in the HTML. Every <li> inside it is
+          created dynamically by main.js from the tasks array, this is the
+          "dynamic content update" and "DOM manipulation" the brief asks
+          for. See renderTasks() in main.js for exactly how each row is
+          built.
+        -->
+        <ul class="task-list" id="taskList"></ul>
+
+        <!--
+          EMPTY STATE: shown by main.js whenever the current filter has no
+          tasks to display, hidden the moment at least one task exists in
+          that filter. Gives the visitor a clear next action instead of a
+          blank, confusing box.
+        -->
+        <p class="empty-state" id="emptyState">No tasks yet. Add your first one above.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo footer-logo">JA<span class="cursor-blip">_</span></a>
+      <ul class="footer-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Jide Adeniji. Built for COS 106, Miva Open University.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

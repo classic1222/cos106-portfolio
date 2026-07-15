@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Jide Adeniji</title>
+  <meta name="description" content="Web development and cybersecurity projects by Jide Adeniji, including TopcityJam Media, the Post Views Ranking WordPress plugin, and a home lab security monitor.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-header">
+      <div class="scanline" aria-hidden="true"></div>
+      <div class="page-header-inner">
+        <p class="eyebrow">// projects</p>
+        <h1 class="page-heading">Things I've built</h1>
+        <p class="page-lede">A mix of live client work, a published WordPress plugin, and a personal security lab.</p>
+      </div>
+    </section>
+
+    <!--
+      PROJECT LIST: Each project is an <article>, semantically correct
+      since each one is a self-contained, independently distributable
+      piece of content. project-row alternates image-left/text-right and
+      text-left/image-right using the .reverse class, purely for visual
+      rhythm as the visitor scrolls down the list.
+    -->
+    <section class="projects-list">
+
+      <!-- PROJECT 1: TopcityJam Media (real, live site) -->
+      <article class="project-row reveal-target">
+        <div class="project-media">
+          <img src="images/topcityjam-thumb.svg" alt="Waveform and play button illustration representing the TopcityJam Media audio player">
+        </div>
+        <div class="project-details">
+          <p class="eyebrow">// live project</p>
+          <h2 class="project-title">TopcityJam Media</h2>
+          <p class="project-description">
+            A music, album, and entertainment website built for free
+            downloads. Includes a custom pink-styled audio player and a
+            PHP-based upload panel where artist names and song titles
+            entered on upload automatically populate the player, no manual
+            re-entry required.
+          </p>
+
+          <ul class="tag-list">
+            <li>WordPress</li>
+            <li>PHP</li>
+            <li>Custom shortcode plugin</li>
+            <li>JavaScript</li>
+          </ul>
+
+          <a href="https://topcityjam.com" class="project-link" target="_blank" rel="noopener noreferrer">
+            Visit topcityjam.com &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Post Views Ranking plugin (real, live site) -->
+      <article class="project-row reverse reveal-target">
+        <div class="project-media">
+          <img src="images/post-views-ranking-thumb.svg" alt="Ranking podium and view-count icon illustration representing the Post Views Ranking plugin">
+        </div>
+        <div class="project-details">
+          <p class="eyebrow">// wordpress plugin</p>
+          <h2 class="project-title">Post Views Ranking (Rolling Windows)</h2>
+          <p class="project-description">
+            A WordPress plugin that tracks and ranks posts by views across
+            rolling time windows, 24 hours, 7 days, 30 days, and all-time,
+            using flat daily keys for fast lookups. Heavily optimized with
+            scheduled calculations instead of counting views on every page
+            load.
+          </p>
+
+          <ul class="tag-list">
+            <li>WordPress</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Cron scheduling</li>
+          </ul>
+
+          <a href="https://web.topcityjam.com/music-chart" class="project-link" target="_blank" rel="noopener noreferrer">
+            See it ranking live &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: Home Lab Network Security Monitor (simulated, per brief) -->
+      <article class="project-row reveal-target">
+        <div class="project-media">
+          <img src="images/home-lab-thumb.svg" alt="Network diagram illustration with a central monitoring node representing the Home Lab Network Security Monitor">
+        </div>
+        <div class="project-details">
+          <p class="eyebrow">// personal lab, simulated</p>
+          <h2 class="project-title">Home Lab Network Security Monitor</h2>
+          <p class="project-description">
+            A self-hosted lab environment for practising intrusion
+            detection. Simulated attacks are run against isolated virtual
+            machines while traffic is logged and reviewed to identify
+            suspicious activity, direct preparation for real-world threat
+            detection work in fintech environments.
+          </p>
+
+          <ul class="tag-list">
+            <li>Home lab</li>
+            <li>Threat detection</li>
+            <li>Network security</li>
+            <li>Virtual machines</li>
+          </ul>
+
+          <span class="project-link project-link-static">
+            No public link, private lab environment
+          </span>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo footer-logo">JA<span class="cursor-blip">_</span></a>
+      <ul class="footer-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Jide Adeniji. Built for COS 106, Miva Open University.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

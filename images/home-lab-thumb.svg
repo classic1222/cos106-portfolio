@@ -1,0 +1,45 @@
+<svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="labTitle">
+  <title id="labTitle">Abstract network diagram illustration for the Home Lab Network Security Monitor</title>
+  <defs>
+    <linearGradient id="labBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10151f"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#labBg)"/>
+
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+  </g>
+
+  <!-- connecting lines between nodes, drawn first so nodes sit on top -->
+  <g stroke="#f70f5d" stroke-width="1.5" opacity="0.5">
+    <line x1="300" y1="170" x2="140" y2="90"/>
+    <line x1="300" y1="170" x2="460" y2="90"/>
+    <line x1="300" y1="170" x2="140" y2="250"/>
+    <line x1="300" y1="170" x2="460" y2="250"/>
+    <line x1="300" y1="170" x2="300" y2="60"/>
+  </g>
+
+  <!-- central node: the monitoring host -->
+  <circle cx="300" cy="170" r="30" fill="#0a0e16" stroke="#f70f5d" stroke-width="2.5"/>
+  <path d="M300 155 L312 161 V172 C312 182 306 188 300 191 C294 188 288 182 288 172 V161 Z"
+        fill="none" stroke="#ff5c8f" stroke-width="2"/>
+
+  <!-- surrounding nodes: monitored devices on the simulated network -->
+  <g fill="#161c29" stroke="#ff5c8f" stroke-width="1.5">
+    <circle cx="140" cy="90" r="16"/>
+    <circle cx="460" cy="90" r="16"/>
+    <circle cx="140" cy="250" r="16"/>
+    <circle cx="460" cy="250" r="16"/>
+    <circle cx="300" cy="60" r="14"/>
+  </g>
+
+  <!-- one node flagged red to suggest active threat detection -->
+  <circle cx="460" cy="90" r="6" fill="#ff5f57"/>
+</svg>

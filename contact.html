@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Jide Adeniji</title>
+  <meta name="description" content="Get in touch with Jide Adeniji.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html" class="active">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-header">
+      <div class="scanline" aria-hidden="true"></div>
+      <div class="page-header-inner">
+        <p class="eyebrow">// contact</p>
+        <h1 class="page-heading">Let's talk</h1>
+        <p class="page-lede">Questions, collaborations, or just want to say hello, reach out below.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-grid">
+
+        <!--
+          CONTACT INFO CARD: direct details, no JS needed here since it is
+          static content. mailto: and tel: links let a visitor's own email
+          app or phone dialer open directly, a small usability touch that
+          a plain text string would not offer.
+        -->
+        <div class="contact-info-card">
+          <p class="eyebrow">// direct</p>
+          <h2 class="section-heading">Reach me directly</h2>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:adenijiolajide6@gmail.com" class="contact-value">adenijiolajide6@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+2348167499396" class="contact-value">+234 816 749 9396</a>
+            </li>
+            <li>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Lagos, Nigeria</span>
+            </li>
+          </ul>
+
+          <p class="contact-note">
+            For quicker responses on anything web-development related, the
+            form is the better option, it comes straight through with all
+            the details filled in.
+          </p>
+        </div>
+
+        <!--
+          CONTACT FORM: a real <form>, the brief's remaining form
+          requirement. novalidate turns off the browser's built-in
+          validation bubbles so main.js can show matching, consistently
+          styled error messages instead, without the two systems
+          conflicting or double-reporting the same problem.
+        -->
+        <div class="contact-form-card">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="nameField">Name</label>
+              <input type="text" id="nameField" name="name" placeholder="Your full name">
+              <span class="field-error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="emailField">Email</label>
+              <input type="email" id="emailField" name="email" placeholder="you@example.com">
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneField">Phone</label>
+              <input type="tel" id="phoneField" name="phone" placeholder="Digits only, e.g. 08167499396">
+              <span class="field-error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="messageField">Message</label>
+              <textarea id="messageField" name="message" rows="5" placeholder="What's on your mind?"></textarea>
+              <span class="field-error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send message</button>
+
+            <!--
+              SUCCESS MESSAGE: hidden until main.js reveals it after a
+              fully valid submission. There is no backend wired up here,
+              so this is a simulated send, the form is validated and reset
+              exactly as it would be, but the message itself is not
+              actually transmitted anywhere yet.
+            -->
+            <p class="form-success" id="formSuccess" role="status">
+              Message validated. Since this page has no backend yet, nothing
+              was actually sent, but the form works exactly as it will once
+              one is connected.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo footer-logo">JA<span class="cursor-blip">_</span></a>
+      <ul class="footer-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Jide Adeniji. Built for COS 106, Miva Open University.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
