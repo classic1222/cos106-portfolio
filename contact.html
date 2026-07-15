@@ -50,12 +50,6 @@
     <section class="contact-section">
       <div class="contact-grid">
 
-        <!--
-          CONTACT INFO CARD: direct details, no JS needed here since it is
-          static content. mailto: and tel: links let a visitor's own email
-          app or phone dialer open directly, a small usability touch that
-          a plain text string would not offer.
-        -->
         <div class="contact-info-card">
           <p class="eyebrow">// direct</p>
           <h2 class="section-heading">Reach me directly</h2>
@@ -82,13 +76,7 @@
           </p>
         </div>
 
-        <!--
-          CONTACT FORM: a real <form>, the brief's remaining form
-          requirement. novalidate turns off the browser's built-in
-          validation bubbles so main.js can show matching, consistently
-          styled error messages instead, without the two systems
-          conflicting or double-reporting the same problem.
-        -->
+
         <div class="contact-form-card">
           <form id="contactForm" novalidate>
             <div class="form-group">
@@ -117,13 +105,6 @@
 
             <button type="submit" class="btn btn-primary form-submit">Send message</button>
 
-            <!--
-              SUCCESS MESSAGE: hidden until main.js reveals it after a
-              fully valid submission. There is no backend wired up here,
-              so this is a simulated send, the form is validated and reset
-              exactly as it would be, but the message itself is not
-              actually transmitted anywhere yet.
-            -->
             <p class="form-success" id="formSuccess" role="status">
               Message validated. Since this page has no backend yet, nothing
               was actually sent, but the form works exactly as it will once
