@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Jide Adeniji</title>
+  <meta name="description" content="Educational background, technical skills, career goals, and interests of Jide Adeniji.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Same fixed nav as index.html, only the "active" class moved to About -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html" class="active">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!--
+      PAGE HEADER: A shorter, quieter version of the homepage hero. Reuses
+      the same background grid and scanline for visual continuity between
+      pages, but drops the terminal window since the typing effect is the
+      homepage's signature moment and should not repeat identically here.
+    -->
+    <section class="page-header">
+      <div class="scanline" aria-hidden="true"></div>
+      <div class="page-header-inner">
+        <p class="eyebrow">// about</p>
+        <h1 class="page-heading">The person behind the code</h1>
+        <p class="page-lede">Background, skills, goals, and what fills the time in between.</p>
+      </div>
+    </section>
+
+    <!--
+      EDUCATION AND BACKGROUND: Uses a <table> to lay out background facts
+      as label/value pairs. This satisfies the brief's table requirement in
+      a way that is genuinely useful content (a quick-reference fact sheet)
+      rather than a table forced in just to check a box.
+    -->
+    <section class="about-section reveal-target" id="background">
+      <div class="about-section-inner">
+        <div class="about-text">
+          <p class="eyebrow">// education and background</p>
+          <h2 class="section-heading">Background</h2>
+          <p class="about-paragraph">
+            Jide Adeniji is a cybersecurity analyst and web developer based
+            in Lagos, Nigeria, with over five years of experience
+            specializing in WordPress and web development. He is currently
+            studying Cybersecurity at Miva Open University, where he
+            continues to build his knowledge and technical expertise.
+          </p>
+        </div>
+
+        <table class="fact-table">
+          <caption class="visually-hidden">Quick facts about Jide's background</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Location</th>
+              <td>Lagos, Nigeria</td>
+            </tr>
+            <tr>
+              <th scope="row">Currently studying</th>
+              <td>Cybersecurity, Miva Open University</td>
+            </tr>
+            <tr>
+              <th scope="row">Experience</th>
+              <td>5+ years, WordPress &amp; web development</td>
+            </tr>
+            <tr>
+              <th scope="row">Focus area</th>
+              <td>Threat detection for fintech platforms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!--
+      TECHNICAL SKILLS: Each skill is a labelled progress bar. The fill
+      percentage is stored as a CSS custom property (--level) directly in
+      the style attribute, which is allowed under the project's inline
+      style rule because it is a custom property value, not a hardcoded
+      style. The CSS elsewhere reads var(--level) to size the fill, and
+      only animates it from 0 once the section scrolls into view (see the
+      .reveal-target.revealed .skill-fill rule in style.css).
+    -->
+    <section class="about-section reveal-target" id="skills">
+      <p class="eyebrow">// technical skills</p>
+      <h2 class="section-heading">What I work with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>WordPress</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>PHP</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>HTML</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>CSS</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>JavaScript</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 70%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>Security Fundamentals</span>
+            <span class="skill-percent">60%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 60%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label">
+            <span>Networking Basics</span>
+            <span class="skill-percent">55%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="--level: 55%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="skills-note">
+        Percentages are a rough self-rating, not a certification score.
+        WordPress and PHP come from five years of hands-on client work,
+        the security and networking skills are newer and growing fast
+        through coursework at Miva.
+      </p>
+    </section>
+
+    <!--
+      CAREER ASPIRATIONS: Pulled out as a pull-quote style block instead of
+      a plain paragraph, since it is the single strongest statement on the
+      page and benefits from visual weight.
+    -->
+    <section class="aspirations reveal-target" id="aspirations">
+      <div class="aspirations-card">
+        <span class="quote-mark" aria-hidden="true">&gt;</span>
+        <p class="aspirations-text">
+          My goal is to become a cybersecurity analyst specializing in
+          threat detection for African fintech companies. I am passionate
+          about protecting digital financial systems from emerging cyber
+          threats and contributing to the development of a safer, more
+          secure financial ecosystem across Africa.
+        </p>
+      </div>
+    </section>
+
+    <!--
+      HOBBIES AND INTERESTS: A short row of cards reusing the same visual
+      language as the homepage's module cards, so it does not introduce a
+      new pattern this late in the page.
+    -->
+    <section class="about-section reveal-target" id="hobbies">
+      <p class="eyebrow">// outside of work</p>
+      <h2 class="section-heading">Hobbies and interests</h2>
+
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <h3>Building websites</h3>
+          <p>Side projects and client work, mostly WordPress and vanilla JS.</p>
+        </div>
+        <div class="hobby-card">
+          <h3>Playing video games</h3>
+          <p>Downtime spent gaming, a good way to switch off from screens full of code.</p>
+        </div>
+        <div class="hobby-card">
+          <h3>Surfing the internet</h3>
+          <p>Following tech news, forums, and whatever rabbit hole comes up next.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo footer-logo">JA<span class="cursor-blip">_</span></a>
+      <ul class="footer-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Jide Adeniji. Built for COS 106, Miva Open University.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

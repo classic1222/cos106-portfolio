@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jide Adeniji | Portfolio</title>
+  <meta name="description" content="Student portfolio of Jide Adeniji, cybersecurity analyst and web developer based in Lagos, Nigeria.">
+
+  <!--
+    GOOGLE FONTS: Three typefaces, each with a job.
+    Space Grotesk = headings (has a slightly technical, geometric feel that fits a cyber theme)
+    JetBrains Mono = terminal text, labels, nav links (reinforces the "code" identity)
+    Inter = body paragraphs (clean and easy to read in long form)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- All styling lives in one external file, per project rules -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    SKIP LINK: Lets keyboard and screen reader users jump straight to the
+    main content instead of tabbing through every nav link first. It is
+    hidden until it receives keyboard focus.
+  -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!--
+    FIXED NAVIGATION: Sits on top of the page at all times (position: fixed
+    in CSS). It starts transparent so the hero shows through it, then main.js
+    adds a "scrolled" class once the user scrolls down, which gives it a
+    solid dark background. This is the "transparent on load, solid on
+    scroll" behaviour required by the design standards.
+  -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
+
+      <!--
+        HAMBURGER BUTTON: Only visible on mobile widths (see CSS media query).
+        aria-expanded is toggled by main.js so screen readers know whether
+        the menu is currently open.
+      -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!--
+      HERO SECTION: The "thesis" of the page. Instead of a generic banner,
+      this is styled as a terminal window running a "whoami" command.
+      The actual name and title are typed out character by character by
+      main.js (see the TYPING EFFECT section in that file), which is why
+      the text lives in a data attribute rather than as plain text: JS reads
+      it from there and builds the animation on load.
+    -->
+    <section class="hero" id="hero">
+      <!--
+        SCANLINE OVERLAY: A thin horizontal line that drifts down the hero
+        forever via a CSS keyframe animation. Purely decorative, reinforces
+        the terminal/monitor feel without needing any JS or image assets.
+      -->
+      <div class="scanline" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+
+        <div class="terminal-window">
+          <!-- Fake window chrome: three dots styled like a terminal titlebar -->
+          <div class="terminal-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">visitor@jideadeniji: ~</span>
+          </div>
+
+          <div class="terminal-body">
+            <p class="terminal-line static-line">
+              <span class="prompt">visitor@jideadeniji</span><span class="prompt-symbol">:~$</span> whoami
+            </p>
+            <!--
+              TYPING TARGET: main.js finds this element by id and types the
+              name into it letter by letter, then moves to the role line
+              below. The blinking cursor span is repositioned by JS as it
+              types, then left in place at the end.
+            -->
+            <p class="terminal-line">
+              <span class="prompt-symbol output-arrow">&gt;</span>
+              <span id="typedName" class="typed-text" data-full-text="Jide Adeniji"></span><span class="cursor-blip" id="cursorOne">_</span>
+            </p>
+            <p class="terminal-line">
+              <span id="typedRole" class="typed-text typed-role" data-full-text="Cybersecurity Analyst // Web Developer"></span><span class="cursor-blip hidden" id="cursorTwo">_</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Lagos, Nigeria</p>
+          <h1 class="hero-heading">Securing systems.<br>Building the web.</h1>
+          <p class="hero-lede">
+            Welcome! My name is Jide Adeniji, and this is my student portfolio.
+            Here, you'll find a collection of my projects, skills, and
+            experiences that reflect my learning journey and personal growth.
+          </p>
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary">View projects</a>
+            <a href="about.html" class="btn btn-ghost">About me</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--
+      BIO SECTION: A short, glass-panel introduction with the profile photo.
+      This section is deliberately brief, the full story lives on about.html;
+      this is a preview so the homepage does not try to do that page's job.
+    -->
+    <section class="intro reveal-target" id="intro">
+      <div class="intro-photo-frame">
+        <!--
+          HEX-CLIPPED PHOTO: clip-path in CSS cuts the image into a hexagon
+          instead of the usual circle or square. It ties visually to the
+          "network node" idea common in security/network diagrams.
+        -->
+        <img src="images/jide-profile.jpg" alt="Photo of Jide Adeniji" class="intro-photo">
+        <div class="intro-photo-ring" aria-hidden="true"></div>
+      </div>
+
+      <div class="intro-text">
+        <p class="eyebrow">// a quick intro</p>
+        <p class="intro-paragraph">
+          Jide Adeniji is a cybersecurity analyst and web developer based in
+          Lagos, Nigeria, with over five years of experience specializing in
+          WordPress and web development. He is currently studying
+          Cybersecurity at Miva Open University, where he continues to build
+          his knowledge and technical expertise.
+        </p>
+        <p class="intro-paragraph">
+          Passionate about technology and digital security, Jide is
+          committed to creating secure, reliable, and user-friendly web
+          solutions. His long-term goal is to contribute to making
+          cyberspace safer and more accessible for individuals and
+          organizations in Nigeria and around the world.
+        </p>
+      </div>
+    </section>
+
+    <!--
+      SITE MAP CARDS: A grid of glassmorphic cards, one per remaining page.
+      Each is styled as a "module" you might see in a security dashboard,
+      with a two-digit index and short description. This is the one place
+      the design uses numbered markers, and it is justified here because
+      the cards really do map one-to-one onto the site's fixed page order.
+    -->
+    <section class="modules reveal-target" id="modules">
+      <p class="eyebrow center">// explore the site</p>
+      <h2 class="section-heading center">Four more things to check</h2>
+
+      <div class="module-grid">
+        <a href="about.html" class="module-card">
+          <span class="module-index">01</span>
+          <h3>About</h3>
+          <p>Background, technical skills, and what drives the work.</p>
+        </a>
+
+        <a href="projects.html" class="module-card">
+          <span class="module-index">02</span>
+          <h3>Projects</h3>
+          <p>WordPress builds, a live music platform, and a home lab.</p>
+        </a>
+
+        <a href="planner.html" class="module-card">
+          <span class="module-index">03</span>
+          <h3>Planner</h3>
+          <p>An interactive academic task manager built in vanilla JS.</p>
+        </a>
+
+        <a href="contact.html" class="module-card">
+          <span class="module-index">04</span>
+          <h3>Contact</h3>
+          <p>Send a message directly, validated in real time as you type.</p>
+        </a>
+      </div>
+    </section>
+
+    <!--
+      MULTIMEDIA SECTION: Satisfies the "multimedia (video or audio)"
+      requirement from the brief. Ties naturally to Jide's real project,
+      TopcityJam Media, so an audio player fits the content instead of
+      feeling bolted on. controls gives the visitor play/pause/volume
+      without any custom JS needed for basic playback.
+    -->
+    <section class="media reveal-target" id="media">
+      <div class="media-card">
+        <p class="eyebrow">// currently building</p>
+        <h2 class="section-heading">TopcityJam Media</h2>
+        <p class="media-copy">
+          A live music and entertainment platform for free downloads.
+          Below is a short sample clip used while testing the site's
+          custom pink-styled audio player.
+        </p>
+        <!--
+          NATIVE AUDIO ELEMENT: No file is bundled with this starter, so the
+          src is left as a placeholder. Swap it for a real MP3 in /images
+          or a new /audio folder once you have a clip to use.
+        -->
+        <audio controls class="audio-player">
+          <source src="images/sample-clip.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+  </main>
+
+  <!--
+    FOOTER: Simple sitemap repeat plus a copyright line. Kept quiet on
+    purpose, the hero already made the page's one bold statement.
+  -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo footer-logo">JA<span class="cursor-blip">_</span></a>
+      <ul class="footer-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="planner.html">planner</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Jide Adeniji. Built for COS 106, Miva Open University.</p>
+    </div>
+  </footer>
+
+  <!-- JS loaded at the bottom of body so the DOM exists before scripts run -->
+  <script src="js/main.js"></script>
+</body>
+</html>
