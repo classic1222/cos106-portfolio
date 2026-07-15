@@ -50,12 +50,6 @@
     <section class="planner-section">
       <div class="planner-card">
 
-        <!--
-          STATS BAR: three small counters that main.js keeps updated every
-          time the task list changes. Reading "3 active, 2 done" at a
-          glance is more useful during a busy week than scrolling a full
-          list to count manually.
-        -->
         <div class="planner-stats" id="plannerStats">
           <div class="stat">
             <span class="stat-number" id="statTotal">0</span>
@@ -71,13 +65,7 @@
           </div>
         </div>
 
-        <!--
-          ADD TASK FORM: a real <form> element, satisfying the brief's form
-          requirement on this page too. main.js listens for the "submit"
-          event rather than a button click directly, which also lets the
-          visitor just press Enter in the text field, a small usability
-          detail a click-only handler would miss.
-        -->
+     
         <form id="taskForm" class="task-form">
           <input
             type="text"
@@ -95,41 +83,19 @@
           >
           <button type="submit" class="btn btn-primary task-submit">Add task</button>
         </form>
-        <!--
-          VALIDATION MESSAGE: hidden by default, main.js reveals this if the
-          form is submitted with an empty or whitespace-only task, so the
-          visitor gets clear feedback instead of the row silently failing
-          to appear.
-        -->
+    
         <p class="form-error" id="formError" role="alert"></p>
 
-        <!--
-          FILTER TABS: three buttons that control which tasks are visible.
-          data-filter tells main.js which array of tasks to show when that
-          button is clicked. The "active" class marks the currently
-          selected filter, moved by JS on every click.
-        -->
         <div class="filter-tabs" id="filterTabs">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="active">Active</button>
           <button class="filter-btn" data-filter="completed">Completed</button>
         </div>
 
-        <!--
-          TASK LIST: starts empty in the HTML. Every <li> inside it is
-          created dynamically by main.js from the tasks array, this is the
-          "dynamic content update" and "DOM manipulation" the brief asks
-          for. See renderTasks() in main.js for exactly how each row is
-          built.
-        -->
+      
         <ul class="task-list" id="taskList"></ul>
 
-        <!--
-          EMPTY STATE: shown by main.js whenever the current filter has no
-          tasks to display, hidden the moment at least one task exists in
-          that filter. Gives the visitor a clear next action instead of a
-          blank, confusing box.
-        -->
+    
         <p class="empty-state" id="emptyState">No tasks yet. Add your first one above.</p>
 
       </div>
