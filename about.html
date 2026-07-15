@@ -15,8 +15,6 @@
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Same fixed nav as index.html, only the "active" class moved to About -->
   <header>
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-logo">JA<span class="cursor-blip">_</span></a>
@@ -38,13 +36,6 @@
   </header>
 
   <main id="main-content">
-
-    <!--
-      PAGE HEADER: A shorter, quieter version of the homepage hero. Reuses
-      the same background grid and scanline for visual continuity between
-      pages, but drops the terminal window since the typing effect is the
-      homepage's signature moment and should not repeat identically here.
-    -->
     <section class="page-header">
       <div class="scanline" aria-hidden="true"></div>
       <div class="page-header-inner">
@@ -54,12 +45,6 @@
       </div>
     </section>
 
-    <!--
-      EDUCATION AND BACKGROUND: Uses a <table> to lay out background facts
-      as label/value pairs. This satisfies the brief's table requirement in
-      a way that is genuinely useful content (a quick-reference fact sheet)
-      rather than a table forced in just to check a box.
-    -->
     <section class="about-section reveal-target" id="background">
       <div class="about-section-inner">
         <div class="about-text">
@@ -97,16 +82,6 @@
         </table>
       </div>
     </section>
-
-    <!--
-      TECHNICAL SKILLS: Each skill is a labelled progress bar. The fill
-      percentage is stored as a CSS custom property (--level) directly in
-      the style attribute, which is allowed under the project's inline
-      style rule because it is a custom property value, not a hardcoded
-      style. The CSS elsewhere reads var(--level) to size the fill, and
-      only animates it from 0 once the section scrolls into view (see the
-      .reveal-target.revealed .skill-fill rule in style.css).
-    -->
     <section class="about-section reveal-target" id="skills">
       <p class="eyebrow">// technical skills</p>
       <h2 class="section-heading">What I work with</h2>
@@ -190,12 +165,6 @@
         through coursework at Miva.
       </p>
     </section>
-
-    <!--
-      CAREER ASPIRATIONS: Pulled out as a pull-quote style block instead of
-      a plain paragraph, since it is the single strongest statement on the
-      page and benefits from visual weight.
-    -->
     <section class="aspirations reveal-target" id="aspirations">
       <div class="aspirations-card">
         <span class="quote-mark" aria-hidden="true">&gt;</span>
@@ -209,11 +178,6 @@
       </div>
     </section>
 
-    <!--
-      HOBBIES AND INTERESTS: A short row of cards reusing the same visual
-      language as the homepage's module cards, so it does not introduce a
-      new pattern this late in the page.
-    -->
     <section class="about-section reveal-target" id="hobbies">
       <p class="eyebrow">// outside of work</p>
       <h2 class="section-heading">Hobbies and interests</h2>
